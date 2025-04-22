@@ -28,10 +28,10 @@ public class User {
     // (trong thực tế có thể dùng Lombok để tự động sinh).
     public User() {}
 
-    public User(Long id, String username, String password) {
-        this.id = id;
+    public User(String username, String password, Role role) {
         this.username = username;
         this.password = password;
+        this.role = role;
     }
 
     // Getter và Setter => attributes
