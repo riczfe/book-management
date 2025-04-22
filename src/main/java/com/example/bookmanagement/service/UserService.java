@@ -28,5 +28,35 @@ public class UserService {
         return userRepo.save(newUser);
     }
     /** Xác thực đăng nhập: nếu username/password đúng thì trả về User, sai thì trả về null */
+    public User login(String username, String rawPassword){
+        User user = userRepo.findByUsername(username).orElse(null);
+        if (user == null) {
+            return null; // Không có user này
+        }
+        // Kiểm tra mật khẩu trùng khớp
+        if (!passwordEncoder.matches(rawPassword, user.getPassword())) {
+            return null;    // Mật khẩu sai
+        }
+        return user;
+    }
 
+    /** Lấy thông tin một user theo username (dùng khi cần lấy chi tiết tài khoản) */
+    public User getUserByUsername(String username){
+        return userRepo.findByUsername(username).orElse(null);
+
+    }
+
+    /** Lấy danh sách tất cả người dùng (chỉ Admin dùng) */
+    public List<User> getAllUsers() {
+        return userRepo.findAll();
+    }
+
+    /** Xóa người dùng theo ID (chỉ Admin dùng) */
+    public boolean deleteUser(Long id){
+        if (!userRepo.existsById(id)) {
+            return false;
+        }
+        userRepo.deleteById(id);
+        return true;
+    }
 }
