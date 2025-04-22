@@ -1,0 +1,21 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.4.4'               // Plugin Spring Boot
+	id 'io.spring.dependency-management' version '1.1.2'       // Quản lý phiên bản phụ thuộc
+}
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+java {
+	sourceCompatibility = JavaVersion.VERSION_17               // Sử dụng Java 17
+}
+repositories {
+	mavenCentral()                                             // Sử dụng kho Maven Central để tải dependency
+}
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'      // Spring Web (xây dựng REST API)
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // Spring Data JPA (làm việc với DB qua Hibernate)
+	implementation 'org.springframework.boot:spring-boot-starter-security' // Spring Security (bảo mật, phân quyền)
+	implementation 'org.postgresql:postgresql:42.5.0'                       // Driver kết nối PostgreSQL
+	implementation 'com.auth0:java-jwt:4.5.0'                               // Thư viện JWT (Auth0) để tạo và xác thực token JWT
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'  // Phụ thuộc cho test (JUnit, etc.)
+}
