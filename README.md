@@ -7,8 +7,8 @@
 | Thứ | Ngày  | Nội dung thực hiện                                                                    |
 |-----|-------|---------------------------------------------------------------------------------------|
 | Hai | 22/04 | **(Hoàn thành)**: Setup Project, Entity, Repo cơ bản, Planning, Security cơ bản ✅    |
-| Ba  | 23/04 | JWT Authentication Filter, JwtService, UserDetailsService                             |
-| Tư  | 24/04 | Hoàn thiện SecurityConfig + JWT login, register API                                   |
+| Ba  | 23/04 | **(Hoàn thành)**: JWT Authentication Filter, JwtService, UserDetailsService ✅        |
+| Tư  | 24/04 | **(Hoàn thành)**: Hoàn thiện SecurityConfig + JWT login, register API ✅              |
 | Năm | 25/04 | Service Layer cho User (register, login, CRUD user)                                   |
 | Sáu | 26/04 | Service Layer cho Book (CRUD sách, mượn sách)                                         |
 | Bảy | 27/04 | REST Controllers (AuthController hoàn chỉnh + BookController cơ bản)                  |
