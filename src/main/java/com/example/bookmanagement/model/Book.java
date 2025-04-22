@@ -25,7 +25,7 @@ public class Book {
     // nếu ta định nghĩa quan hệ 1-n phía kia). Để đơn giản, ta bỏ qua trường này trong JSON trả về.
     // Thay vào đó, ta sẽ dùng một trường đơn giản trong DTO để thông báo sách đã được mượn hay chưa.
     @JsonIgnore
-    private User borrowed_by;   // Người dùng đang mượn sách này (null nếu sách đang rảnh)
+    private User borrowedBy;   // Người dùng đang mượn sách này (null nếu sách đang rảnh)
 
     public Book() {}
 
@@ -63,7 +63,11 @@ public class Book {
         return id;
     }
 
-    public void setBorrowed_by(User borrowed_by) {
-        this.borrowed_by = borrowed_by;
+    public void setBorrowedBy(User borrowedBy) {
+        this.borrowedBy = borrowedBy;
+    }
+
+    public User getBorrowedBy() {
+        return borrowedBy;
     }
 }
